@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Security Dashboard</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+
+        body{
+            background:#0d1117;
+            color:white;
+            font-family:Arial,sans-serif;
+            margin:0;
+            padding:20px;
+        }
+
+        .container{
+            max-width:1000px;
+            margin:auto;
+        }
+
+        h1{
+            text-align:center;
+            margin-bottom:25px;
+            font-size:28px;
+        }
+
+        .stats{
+            display:grid;
+            grid-template-columns:repeat(4,1fr);
+            gap:15px;
+            margin-bottom:25px;
+        }
+
+        .card{
+            background:#161b22;
+            padding:15px;
+            border-radius:10px;
+            text-align:center;
+            box-shadow:0 0 10px rgba(0,255,136,0.2);
+        }
+
+        .card h2{
+            margin:0;
+            font-size:24px;
+        }
+
+        .card p{
+            margin-top:8px;
+            color:#aaa;
+        }
+
+        .chart-container{
+            background:#161b22;
+            padding:20px;
+            border-radius:10px;
+            display:flex;
+            justify-content:center;
+        }
+
+        canvas{
+            max-width:450px !important;
+            max-height:450px !important;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <h1>📊 Password Security Dashboard</h1>
+
+    <div class="stats">
+
+        <div class="card">
+            <h2>{{ stats.total }}</h2>
+            <p>Total</p>
+        </div>
+
+        <div class="card">
+            <h2>{{ stats.weak }}</h2>
+            <p>Weak</p>
+        </div>
+
+        <div class="card">
+            <h2>{{ stats.medium }}</h2>
+            <p>Medium</p>
+        </div>
+
+        <div class="card">
+            <h2>{{ stats.strong }}</h2>
+            <p>Strong</p>
+        </div>
+
+    </div>
+
+    <div class="chart-container">
+        <canvas id="myChart"></canvas>
+    </div>
+
+</div>
+
+<script>
+
+const weak = Number("{{ stats.weak }}");
+const medium = Number("{{ stats.medium }}");
+const strong = Number("{{ stats.strong }}");
+
+const ctx = document.getElementById('myChart');
+
+new Chart(ctx, {
+
+    type: 'doughnut',
+
+    data: {
+
+        labels: [
+            'Weak',
+            'Medium',
+            'Strong'
+        ],
+
+        datasets: [{
+            data: [
+                weak,
+                medium,
+                strong
+            ],
+
+            backgroundColor: [
+                '#ff4d4d',
+                '#ffa500',
+                '#00ff88'
+            ]
+        }]
+    },
+
+    options:{
+        responsive:true,
+        maintainAspectRatio:true
+    }
+
+});
+
+</script>
+
+</body>
+</html>

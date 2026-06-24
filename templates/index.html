@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Security Analyzer</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="navbar">
+        <a href="/">🏠 Home</a>
+        <a href="/dashboard">📊 Dashboard</a>
+    </div>
+
+    <h1>🔐 Password Security Analyzer</h1>
+
+    <div class="password-container">
+
+        <input
+            type="password"
+            id="password"
+            placeholder="Enter your password">
+
+        <button
+            type="button"
+            id="toggle-btn"
+            onclick="togglePassword()">
+            👁 Show
+        </button>
+
+    </div>
+
+    <button onclick="checkStrength()">
+        Analyze Password
+    </button>
+
+    <div class="meter">
+        <div id="strength-bar"></div>
+    </div>
+
+    <h3 id="result">Strength:</h3>
+
+    <p id="entropy">Entropy:</p>
+
+    <p id="crack-time">Estimated Crack Time:</p>
+
+    <p id="warning"></p>
+
+    <p id="breach-warning"></p>
+
+    <h3>Password Policy</h3>
+
+    <ul id="policy-list"></ul>
+
+    <hr>
+
+    <h2>Generate Secure Password</h2>
+
+    <button onclick="generatePassword()">
+        Generate Password
+    </button>
+
+    <p id="generated-password"></p>
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
