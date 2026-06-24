@@ -1,6 +1,10 @@
 # 🔐 Password Security Analyzer
 
-A modern cybersecurity-focused web application that evaluates password strength, estimates password security, detects breached passwords, generates secure passwords, and visualizes security analytics through an interactive dashboard.
+A cybersecurity-focused web application that evaluates password strength, calculates entropy, estimates crack time, detects breached passwords, generates secure passwords, and visualizes security analytics through an interactive dashboard.
+
+🌐 **Live Demo:** https://password-strength-analyzer-n4q9.onrender.com
+
+---
 
 ## 🚀 Features
 
@@ -18,7 +22,7 @@ A modern cybersecurity-focused web application that evaluates password strength,
 ### ✅ Crack Time Estimation
 
 * Estimates how long it would take to crack a password
-* Displays easy-to-understand security metrics
+* Displays user-friendly security metrics
 
 ### ✅ Common Password Detection
 
@@ -38,12 +42,12 @@ Checks whether a password satisfies:
 ### ✅ Password Breach Detection
 
 * Checks passwords against known data breaches
-* Uses the Have I Been Pwned (HIBP) API
+* Uses the Have I Been Pwned (HIBP) Password API
 * Implements k-Anonymity for privacy protection
 
 ### ✅ Secure Password Generator
 
-* Generates strong and random passwords
+* Generates strong random passwords
 * Helps users create secure credentials instantly
 
 ### ✅ Security Analytics Dashboard
@@ -55,7 +59,7 @@ Checks whether a password satisfies:
   * Weak passwords
   * Medium passwords
   * Strong passwords
-* Interactive charts using Chart.js
+* Visualizes data using Chart.js
 
 ---
 
@@ -126,9 +130,7 @@ cd Password-Strength-Analyzer
 python -m venv venv
 ```
 
-### Activate Virtual Environment
-
-Windows:
+### Activate Virtual Environment (Windows)
 
 ```bash
 venv\Scripts\activate
@@ -146,7 +148,7 @@ pip install -r requirements.txt
 python app.py
 ```
 
-Open:
+Open your browser:
 
 ```text
 http://127.0.0.1:5000
@@ -156,7 +158,12 @@ http://127.0.0.1:5000
 
 ## 📸 Screenshots
 
-Screenshots are added in screenshots folder!
+Screenshots are available in the `screenshots` folder.
+
+* Home Page
+* Password Analysis
+* Security Dashboard
+* Password Generator
 
 ---
 
@@ -175,12 +182,18 @@ Screenshots are added in screenshots folder!
 
 ## 🎯 Future Improvements
 
-* User Authentication
+* User Authentication System
 * Password History Tracking
 * PDF Security Reports
 * Dark/Light Theme Toggle
 * Multi-User Dashboard
 * AI-Based Password Recommendations
+
+---
+
+## 🏆 Internship Project
+
+This project was developed as part of the **SkillCraft Technology Internship Program** and demonstrates practical cybersecurity concepts including password analysis, breach detection, entropy calculation, secure password generation, and security analytics.
 
 ---
 
@@ -192,7 +205,10 @@ Cybersecurity Student | Security Research Intern
 
 Aspiring SOC Analyst
 
+GitHub: https://github.com/shreya-paul19
+
+---
 
 ## 📜 License
 
-This project is developed for educational and portfolio purposes as part of the SkillCraft Technology Internship.
+This project is developed for educational, learning, and portfolio purposes.
